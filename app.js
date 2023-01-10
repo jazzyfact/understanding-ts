@@ -1,43 +1,15 @@
-// const person: {
-//   name: string;
-//   age: number;
-// } = {
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "mimi",
-//   age: 30,
-//   hobbies: ["Sports", "Cooking"],
-//   role: [2, "author"],
-// };
-// const ADMIN = 0;
-// const READ_ONLY = 1;
-// const AUTHOR = 2;
-var Role;
-(function (Role) {
-    Role[Role["ADMIN"] = 0] = "ADMIN";
-    Role[Role["READ_ONLY"] = 1] = "READ_ONLY";
-    Role[Role["AUTHOR"] = 2] = "AUTHOR";
-})(Role || (Role = {}));
-var person = {
-    name: "mimi",
-    age: 30,
-    hobbies: ["Sports", "Cooking"],
-    role: Role.ADMIN
-};
-// person.role.push("admin");
-// person.role[1] = 10;
-// person.role = [0, "admin", "user"];
-var favoriteActivities;
-favoriteActivities = ["Sports"];
-console.log(person.name);
-for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+function combine(input1, input2) {
+    var result;
+    if (typeof input1 === "number" && typeof input2 === "number") {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
 }
-if (person.role === Role.AUTHOR) {
-    console.log("is admin");
-}
+var combineAges = combine(30, 26);
+console.log(combineAges);
+var combineNames = combine("Max", "Anna");
+console.log(combineNames);
+//서로 다른 두 종류의 값을 사용해야 하는 애플리케이션에서//함수나 상수 혹은 변수의 매개변수를 사용해야 한다면 유니언 타입을 사용
